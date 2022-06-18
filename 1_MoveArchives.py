@@ -38,9 +38,6 @@ Audio_folder = r"C:\Users\Cesar\Dropbox\PC\Desktop\Archives\Audio"
 Video_folder = r"C:\Users\Cesar\Dropbox\PC\Desktop\Archives\Video"
 Doc_folder = r"C:\Users\Cesar\Dropbox\PC\Desktop\Archives\Docs"
 
-def move_file(folder, file):
-    shutil.move(file, folder)
-
 def enumerate_files(Category, folder):
 
     for count, file in enumerate(os.listdir(folder)):
@@ -63,7 +60,7 @@ def enumerate_files(Category, folder):
         # rename all the files
         os.rename(oldName, newName)
 
-def on_modified(source_path):
+def Moving_files(source_path):
         with os.scandir(source_path) as files:
             for file in files:
                 name = file.name
